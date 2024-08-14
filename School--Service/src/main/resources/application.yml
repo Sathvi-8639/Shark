@@ -1,0 +1,16 @@
+server:
+  port: 8092
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    service-url:
+       defaultZone: http://10.154.147.123:8761/eureka/
+    healthcheck:
+       enabled: true
+
+spring:
+  application:
+    name: schools-service
